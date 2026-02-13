@@ -1,183 +1,144 @@
 # Algo Systems  
-## A Governance-First Institutional Standard in Systematic Trading
+## Institutional Formation in Systematic Trading  
 
-### Executive Description
+Algo Systems is a governance-first institutional formation track in **systematic trading**.
 
-Algo Systems represents a structural redefinition of systematic trading education.
-
-Algorithmic trading is often understood as the automation of trading rules through code. While technically accurate, that framing is incomplete. Algorithmic trading is a subset of systematic trading. Systematic trading encompasses the broader discipline of designing policies that operate coherently within dynamic market environments under structural constraints.
-
-Algo Systems operates at that broader level.
-
-It integrates engineering rigor, governed experimentation, and market mechanism literacy into a cumulative institutional formation track. Its objective is not to produce attractive backtests. It is to cultivate professionals capable of modeling markets structurally.
+Algorithmic trading is a subset of systematic trading.  
+Algo Systems operates at the broader structural level — integrating engineering discipline, governed experimentation, and market mechanism literacy into a coherent institutional standard.
 
 ---
 
-## Systematic Trading as Structural Modeling
+## Overview
 
-Systematic trading is the disciplined modeling of markets.
+Systematic trading is the disciplined modeling of markets — not the extraction of signals.
 
-Markets are not static datasets. They are dynamic systems characterized by:
+Markets are dynamic systems governed by regime shifts, liquidity topology, volatility states, funding constraints, and instrument mechanics. Performance is not the starting point of analysis. It is the consequence of correctly modeled structural conditions.
 
-- Regime-dependent volatility  
-- Liquidity variation  
-- Correlation compression and expansion  
-- Funding and margin constraints  
-- Instrument-specific mechanics  
-- Convex transaction costs  
+Algo Systems formalizes this premise through cumulative, deterministic, and reviewable experimentation.
 
-In this context, performance is not a signal discovery problem alone. It is an environmental modeling problem.
-
-A policy may remain directionally predictive while becoming economically infeasible due to liquidity deterioration or impact convexity. The environment changes before the signal disappears.
-
-Systematic competence therefore requires explicit modeling of regime structure and execution conditions.
-
-Algo Systems formalizes this discipline.
+This repository hosts the landing page and structural documentation for the Algo Systems formation framework.
 
 ---
 
-## Architecture of Formation
+## Architectural Framework
 
-The program is cumulative and structured across three pillars.
+The formation is structured across three integrated pillars:
 
-### Pillar I — Systems Discipline
+### 1. Systems Discipline  
+Deterministic infrastructure, execution modeling, configuration control, and governance artifacts.  
+Reproducibility precedes interpretation.
 
-Infrastructure precedes experimentation.
+### 2. Governed Strategy Laboratories  
+Synthetic-first experimentation under regime variation and structural stress.  
+Causal probing replaces uncontrolled optimization.
 
-Participants construct deterministic trading systems with explicit configuration control and artifact logging. Reproducibility is mandatory. Assumptions are documented. Outputs are traceable.
+### 3. Market Mechanisms & Implementation  
+Futures carry, term structures, derivatives convexity, liquidity topology, and microstructure constraints.  
+Markets are treated as transactional systems, not price series.
 
-Without engineering discipline, experimentation devolves into narrative reconstruction.
-
-Systems Discipline establishes methodological integrity.
-
----
-
-### Pillar II — Governed Strategy Laboratories
-
-Synthetic-first laboratories isolate canonical mechanisms under controlled regime variation.
-
-Strategies are tested across:
-
-- Volatility shifts  
-- Correlation compression  
-- Liquidity shocks  
-- Cost convexity steepening  
-- Structural stress scenarios  
-
-Each experiment follows a governed pipeline:
-
-1. Synthetic environment construction  
-2. Signal isolation  
-3. Portfolio mapping  
-4. Cost embedding  
-5. Structural stress testing  
-6. Stage gate review  
-
-This replaces uncontrolled optimization with disciplined causal probing.
+Together, these pillars cultivate structural competence in systematic trading.
 
 ---
 
-### Pillar III — Market Mechanisms & Implementation
+## Governance Model
 
-Systematic trading extends beyond equities.
+Governance in Algo Systems is epistemic discipline.
 
-Participants engage with:
+Each laboratory:
 
-- Futures carry and roll dynamics  
-- Derivatives convexity  
-- Liquidity topology  
-- Microstructure constraints  
-- Crypto venue fragmentation  
+- Produces deterministic artifacts  
+- Separates assumptions from observations  
+- Records configuration fingerprints  
+- Applies stage gates prior to interpretation  
 
-Markets are treated as transactional systems governed by institutional mechanics.
+This ensures that conclusions are:
 
-Implementation realism becomes central.
+- Reviewable  
+- Traceable  
+- Structurally defensible  
 
----
-
-## Governance as Epistemology
-
-Governance in Algo Systems is intellectual discipline.
-
-Every laboratory produces deterministic artifacts.  
-Configuration fingerprints are recorded.  
-Assumptions are separated from outputs.  
-Stage gates precede interpretation.
-
-This ensures structural defensibility.
-
-Governance prevents:
-
-- Irreproducible performance narratives  
-- Implicit regime assumptions  
-- Simplified cost abstractions  
-- Unreviewable claims  
-
-Systematic trading becomes reviewable research.
+The objective is not performance marketing.  
+The objective is disciplined systematic reasoning.
 
 ---
 
-## Scale and Cumulative Rigor
+## Scope of Repository
 
-The formation spans more than forty governed laboratories and companion volumes.
+This repository contains:
 
-The scale is deliberate.
+- Landing page assets  
+- Documentation describing the formation framework  
+- Public-facing materials explaining the methodological structure  
 
-Rigor is cumulative.  
-Standards are repeated.  
-Methodology is reinforced across mechanisms.
-
-This repetition builds structural consistency.
+It does **not** contain live trading systems, investment recommendations, or deployable strategies.
 
 ---
 
-## Instructor-Led Continuity
+## Important Disclaimer
 
-Algo Systems integrates written architecture, deterministic laboratories, and instructor-led synthesis.
+The materials in this repository are provided for educational and research purposes only.
 
-Methodological continuity is preserved.  
-Interpretive drift is minimized.  
-Standards remain coherent.
+Nothing contained herein constitutes:
 
----
+- Investment advice  
+- Financial advice  
+- Trading advice  
+- A recommendation to buy or sell any security, derivative, or financial instrument  
 
-## Competency Transformation
+All examples referenced within the broader formation materials are synthetic or illustrative unless explicitly stated otherwise.
 
-Participants develop the ability to:
+Past performance — whether simulated or real — is not indicative of future results.
 
-- Model regime-dependent environments  
-- Map fragility surfaces  
-- Embed cost realism  
-- Evaluate feasibility constraints  
-- Distinguish structural from incidental assumptions  
-- Defend systematic policies under institutional scrutiny  
-
-This is a transformation from algorithmic technician to systematic professional.
+Users are solely responsible for any decisions made based on their independent interpretation of the materials.
 
 ---
 
-## Institutional Standard
+## Limitation of Liability
 
-Algo Systems represents a new institutional standard in systematic trading education.
+To the fullest extent permitted by applicable law, the author and contributors shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or related to the use of this repository or associated materials.
 
-It aligns engineering rigor, governed experimentation, and market mechanism literacy with expectations found in serious quantitative research environments.
+The repository is provided “as is,” without warranties of any kind, express or implied.
 
-It does not promise alpha.
+---
 
+## Use of Artificial Intelligence
+
+Portions of the written content and software code associated with Algo Systems were developed with the assistance of artificial intelligence tools.
+
+Artificial intelligence tools were used as drafting and productivity aids under direct supervision.
+
+All conceptual direction, methodological design, structural architecture, editorial decisions, and final approval were determined, reviewed, and approved by the author.
+
+The author retains full intellectual and legal responsibility for the content, structure, and conclusions presented herein.
+
+AI systems are not authors, do not hold intellectual ownership, and bear no responsibility for the materials.
+
+---
+
+## Intellectual Property
+
+© 2026 Alejandro Reynoso. All rights reserved.
+
+No part of this repository may be reproduced, distributed, modified, transmitted, or republished in any form or by any means without prior written permission, except as permitted by applicable copyright law.
+
+Unauthorized commercial use is strictly prohibited.
+
+---
+
+## Contact & Institutional Inquiries
+
+For academic collaboration, institutional licensing, or program inquiries, please contact the repository owner through the official GitHub profile.
+
+---
+
+## Statement of Intent
+
+Algo Systems represents a new institutional standard in systematic trading education — integrating engineering rigor, governed experimentation, and market structure literacy into a cumulative professional formation track.
+
+It does not promise alpha.  
 It builds structural competence.
 
 ---
 
-## Conclusion
-
-Systematic trading is not primarily about extracting signals.
-
-It is about constructing policies that remain coherent under changing structural conditions.
-
-Algo Systems formalizes that discipline.
-
-It elevates systematic trading education to institutional standards.
-
-It is cumulative.  
-It is governed.  
-It is structural.
+**Discipline First. Exploration Second. Implementation Third.**  
+**Governance First. Structure Always.**
