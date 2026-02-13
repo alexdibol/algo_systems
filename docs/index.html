@@ -17,6 +17,7 @@
   --border:rgba(255,255,255,0.07);
   --accent:#7c9cff;
   --accent2:#4de3c1;
+  --warn:#ffd27a;
   --radius:26px;
   --shadow:0 24px 80px rgba(0,0,0,0.55);
 }
@@ -24,11 +25,20 @@
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-  background: radial-gradient(circle at 20% 0%, #101427 0%, var(--bg) 60%);
+  background:
+    radial-gradient(900px 650px at 20% 0%, rgba(124,156,255,0.16), transparent 55%),
+    radial-gradient(800px 600px at 85% 20%, rgba(77,227,193,0.10), transparent 55%),
+    radial-gradient(900px 650px at 60% 95%, rgba(255,210,122,0.06), transparent 55%),
+    var(--bg);
   color:var(--text);
   line-height:1.95;
+  overflow-x:hidden;
 }
+a{color:var(--accent);text-decoration:none;}
+a:hover{color:var(--accent2);text-decoration:underline;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* Header */
 header{padding:130px 0 90px}
 .kicker{
   font-size:0.78rem;
@@ -44,11 +54,11 @@ h1{
   letter-spacing:-1.4px;
   max-width:22ch;
 }
-@media(max-width:760px){h1{font-size:2.4rem}}
+@media(max-width:760px){h1{font-size:2.35rem}}
 .hero-sub{
-  font-size:1.28rem;
+  font-size:1.22rem;
   color:var(--muted);
-  max-width:98ch;
+  max-width:110ch;
   margin:0 0 22px;
 }
 .seq{
@@ -57,8 +67,10 @@ h1{
   letter-spacing:1.2px;
   color:var(--accent);
 }
+
+/* Panels */
 .panel{
-  background:var(--panel);
+  background:linear-gradient(180deg, rgba(20,24,54,0.86), rgba(15,18,32,0.86));
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:62px;
@@ -71,47 +83,9 @@ h1{
   margin:0 0 24px;
   letter-spacing:-0.6px;
 }
-.pillars{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:32px;
-  margin-top:32px;
-}
-.pillar{
-  background:var(--panel2);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:38px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.pillar h3{margin:0 0 14px;font-size:1.45rem}
-.pillar p{margin:0 0 18px;color:var(--muted)}
-.button{
-  padding:14px 22px;
-  border-radius:18px;
-  text-decoration:none;
-  border:1px solid var(--accent);
-  color:var(--accent);
-  font-weight:900;
-  transition:0.25s ease;
-  display:inline-block;
-}
-.button:hover{background:var(--accent);color:#000}
-.highlight{font-weight:900;color:var(--accent2)}
 .small{font-size:0.98rem;color:var(--muted)}
 .divider{height:1px;background:var(--border);margin:28px 0}
-ul.clean{margin:16px 0 0 20px;padding:0;color:var(--muted)}
-ul.clean li{margin:10px 0}
-footer{
-  padding:110px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:1rem;
-}
-footer a{color:var(--accent);text-decoration:none;font-weight:900}
-footer a:hover{text-decoration:underline}
+.highlight{font-weight:900;color:var(--accent2)}
 code.inline{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size:0.95em;
@@ -120,214 +94,310 @@ code.inline{
   background:rgba(255,255,255,0.06);
   border:1px solid var(--border);
 }
+
+/* Domain-style header (matches your screenshot notation) */
+.domainhead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.domainhead h2, .domainhead h3{
+  margin:0;
+  font-size:0.95rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--text);
+}
+.domaintag{
+  font-size:0.78rem;
+  font-weight:900;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--accent2);
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.10);
+  background:rgba(0,0,0,0.16);
+  white-space:nowrap;
+}
+
+/* Cards (aligned to screenshot) */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:18px;
+  margin-top:22px;
+}
+.card{
+  padding:22px 22px;
+  border-radius:22px;
+  background:rgba(20,24,54,0.58);
+  border:1px solid rgba(255,255,255,0.10);
+  box-shadow:0 14px 38px rgba(0,0,0,0.35);
+  color:inherit;
+}
+.linkcard{
+  display:block;
+  cursor:pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+  text-decoration:none;
+}
+.linkcard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(124,156,255,0.38);
+  background:rgba(20,24,54,0.76);
+  text-decoration:none;
+}
+.linkcard:focus{
+  outline:2px solid rgba(77,227,193,0.46);
+  outline-offset:3px;
+  text-decoration:none;
+}
+.card h3{
+  margin:0 0 12px;
+  font-size:1.25rem;
+  line-height:1.22;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:0.98rem;
+  line-height:1.65;
+  max-width:92ch;
+}
+.hint{
+  margin-top:16px;
+  font-size:0.78rem;
+  color:rgba(238,240,255,0.72);
+  opacity:0.95;
+  font-weight:900;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.hint span{
+  opacity:0.9;
+}
+.hint b{
+  color:rgba(238,240,255,0.86);
+  font-weight:900;
+}
+
+/* Callout */
+.callout{
+  margin-top:18px;
+  padding:18px 18px;
+  border-radius:18px;
+  border:1px solid rgba(124,156,255,0.18);
+  background:linear-gradient(135deg, rgba(124,156,255,0.06), rgba(77,227,193,0.04));
+  color:var(--muted);
+  max-width:110ch;
+}
+.callout strong{color:var(--text);}
+
+/* Footer */
+footer{
+  padding:110px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:1rem;
+}
+footer a{color:var(--accent);text-decoration:none;font-weight:900}
+footer a:hover{text-decoration:underline}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="wrap">
-  <div class="kicker">Institutional Formation · Governance First · Systematic Discipline</div>
+  <div class="wrap">
+    <div class="kicker">Institutional Formation · Governance First · Systematic Discipline</div>
 
-  <h1>
-    Systematic trading is the disciplined modeling of markets — not the extraction of signals.
-  </h1>
+    <h1>Systematic trading is the disciplined modeling of markets — not the extraction of signals.</h1>
 
-  <p class="hero-sub">
-    Algo Systems is a governance-first institutional formation track in systematic trading.
-    In common usage, “algorithmic trading” often emphasizes automation, tooling, and code execution.
-    Algo Systems treats that as necessary — but not sufficient.
-    Algorithmic trading is a subset of systematic trading, and systematic trading is the broader discipline:
-    designing policies that remain coherent under regime shifts, liquidity variation, cost convexity, funding constraints,
-    and instrument mechanics.
-  </p>
+    <p class="hero-sub">
+      Algo Systems is a governance-first institutional formation track in systematic trading.
+      In common usage, “algorithmic trading” often emphasizes automation, tooling, and code execution.
+      Algo Systems treats that as necessary — but not sufficient.
+      Algorithmic trading is a subset of systematic trading, and systematic trading is the broader discipline:
+      designing policies that remain coherent under regime shifts, liquidity variation, cost convexity, funding constraints,
+      and instrument mechanics.
+    </p>
 
-  <p class="hero-sub">
-    The formation integrates conceptual architecture, deterministic experimentation,
-    and market mechanism literacy into a single cumulative framework.
-    Spanning more than forty governed laboratories and companion volumes, Algo Systems is built to be repeatable and reviewable.
-    Rigor is not episodic — it is structural.
-  </p>
+    <p class="hero-sub">
+      The formation integrates conceptual architecture, deterministic experimentation, and market mechanism literacy into a single cumulative framework.
+      Spanning more than forty governed laboratories and companion volumes, Algo Systems is built to be repeatable and reviewable.
+      Rigor is not episodic — it is structural.
+    </p>
 
-  <div class="seq">Discipline → Exploration → Implementation</div>
-</div>
+    <div class="seq">Discipline → Exploration → Implementation</div>
+  </div>
 </header>
 
 <section>
-<div class="wrap">
+  <div class="wrap">
 
-  <div class="panel">
-    <div class="section-title">The Structural Premise</div>
+    <div class="panel">
+      <div class="section-title">The Structural Premise</div>
 
-    <p>
-      Markets are not stable datasets. They are dynamic transactional environments.
-      Volatility changes state, correlations compress and expand, liquidity thins and thickens, funding constraints tighten,
-      and trading frictions become nonlinear precisely when strategies need to adapt.
-      In professional settings, “performance” is inseparable from these conditions.
-    </p>
+      <p>
+        Markets are not stable datasets. They are dynamic transactional environments.
+        Volatility changes state, correlations compress and expand, liquidity thins and thickens, funding constraints tighten,
+        and trading frictions become nonlinear precisely when strategies need to adapt.
+        In professional settings, “performance” is inseparable from these conditions.
+      </p>
 
-    <p>
-      Algo Systems therefore begins with structure. A strategy fails not only when its signal weakens,
-      but when it is engineered for an environment that no longer exists.
-      This is the core lesson that most superficial treatments omit:
-      predictive directionality can remain intact while realized returns deteriorate because turnover rises,
-      impact costs become convex, and feasibility collapses under stress.
-    </p>
+      <p>
+        Algo Systems therefore begins with structure. A strategy fails not only when its signal weakens,
+        but when it is engineered for an environment that no longer exists.
+        Predictive directionality can remain intact while realized returns deteriorate because turnover rises,
+        impact costs become convex, and feasibility collapses under stress.
+      </p>
 
-    <p class="highlight">
-      Algo Systems elevates systematic trading education to institutional standards of rigor: reproducibility, auditability,
-      mechanism clarity, and execution realism.
-    </p>
+      <p class="highlight">
+        Algo Systems elevates systematic trading education to institutional standards of rigor: reproducibility, auditability,
+        mechanism clarity, and execution realism.
+      </p>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="small">
-      Practical implication: instead of asking only <em>“Does it backtest well?”</em>, the disciplined question becomes
-      <em>“Under what structural conditions does it fail, and why?”</em>
-      Algo Systems trains that style of reasoning by construction.
-    </p>
-  </div>
+      <p class="small">
+        Practical implication: instead of asking only <em>“Does it backtest well?”</em>, the disciplined question becomes
+        <em>“Under what structural conditions does it fail, and why?”</em>
+        Algo Systems trains that style of reasoning by construction.
+      </p>
+    </div>
 
-  <div class="panel">
-    <div class="section-title">The Three Pillars of Formation</div>
-
-    <p>
-      The platform is intentionally sequenced. Each pillar builds a distinct professional capability and protects the next one from
-      degenerating into narrative. Discipline makes work reviewable. Laboratories make mechanisms visible. Market mechanics make deployment feasible.
-      Together, they form a coherent trajectory: from engineering hygiene, to governed experimentation, to implementation literacy across instruments and venues.
-    </p>
-
-    <div class="pillars">
-
-      <div class="pillar">
-        <div>
-          <h3>Pillar I — Systems Discipline</h3>
-          <p>
-            Foundations of modern systematic trading infrastructure: deterministic experimentation, execution modeling,
-            portfolio architecture, and governance artifacts. The point is methodological control —
-            so that results can be reproduced, challenged, and improved without ambiguity.
-          </p>
-          <p class="small">
-            You build the infrastructure that makes serious experimentation possible:
-            configuration fingerprints, traceable outputs, and disciplined separation of assumptions vs observations.
-          </p>
-        </div>
-        <a href="https://alexdibol.github.io/ai-algo-trading-notebooks" class="button" target="_blank" rel="noopener">
-          Visit Pillar I
-        </a>
+    <!-- THREE PILLARS — re-notated to match your "DOMAIN" header + tag, and "OPEN LANDING PAGE →" CTA -->
+    <div class="panel" id="pillars">
+      <div class="domainhead">
+        <h2>FORMATION: THREE PILLARS</h2>
+        <span class="domaintag">DISCIPLINE → EXPLORATION → IMPLEMENTATION</span>
       </div>
 
-      <div class="pillar">
-        <div>
-          <h3>Pillar II — Governed Strategy Laboratories</h3>
+      <p class="small">
+        Each pillar is a distinct professional capability and a clean entry point.
+        The system is sequenced so that discipline makes work reviewable, laboratories make mechanisms visible,
+        and market mechanics make deployment feasible.
+      </p>
+
+      <div class="grid">
+        <a class="card linkcard" href="https://alexdibol.github.io/ai-algo-trading-notebooks" target="_blank" rel="noopener" aria-label="Visit Pillar I">
+          <h3>Foundations of Modern Algorithmic Trading — Volumes I–III</h3>
+          <p>
+            Foundations of systematic trading infrastructure: deterministic experimentation, execution modeling,
+            portfolio architecture, and governance artifacts.
+            The point is methodological control — so results can be reproduced, challenged, and improved without ambiguity.
+          </p>
+          <div class="hint"><b>OPEN LANDING PAGE</b> <span>→</span></div>
+        </a>
+
+        <a class="card linkcard" href="https://alexdibol.github.io/algo_strategies" target="_blank" rel="noopener" aria-label="Visit Pillar II">
+          <h3>Governed Strategy Laboratories for Systematic Traders — Volume I</h3>
           <p>
             Synthetic-first experimentation under regime variation and structural stress.
             Instead of chasing alpha, you isolate canonical mechanisms and attack them:
-            volatility shocks, correlation compression, liquidity cliffs, and hypothesis failures.
+            volatility shocks, correlation compression, liquidity cliffs, and hypothesis failures —
+            with auditable artifacts and an explicit <code class="inline">Not verified</code> posture.
           </p>
-          <p class="small">
-            The output is not a story — it is an auditable experimental record:
-            what worked, what failed, why it failed, and what conditions are binding.
-          </p>
-        </div>
-        <a href="https://alexdibol.github.io/algo_strategies" class="button" target="_blank" rel="noopener">
-          Visit Pillar II
+          <div class="hint"><b>OPEN LANDING PAGE</b> <span>→</span></div>
         </a>
-      </div>
 
-      <div class="pillar">
-        <div>
-          <h3>Pillar III — Market Mechanisms & Implementation</h3>
+        <a class="card linkcard" href="https://alexdibol.github.io/markets_for_traders" target="_blank" rel="noopener" aria-label="Visit Pillar III">
+          <h3>Market Mechanisms &amp; Microstructure for Systematic Traders — Volumes I–II</h3>
           <p>
-            A disciplined expansion into market structure: futures carry, derivatives convexity, liquidity topology,
-            and microstructure literacy. Markets are treated as transactional systems, not merely time series.
+            A disciplined expansion into market structure: microstructure, liquidity, execution friction, and regime behavior —
+            plus instrument mechanics (roll, margin, convexity, venue fragmentation) that reshape feasibility and risk in ways
+            that time-series backtests alone cannot reveal.
           </p>
-          <p class="small">
-            You learn implementation realism: how instruments embed mechanics (roll, margin, convexity, venue fragmentation)
-            that reshape feasibility and risk in ways that backtests alone cannot reveal.
-          </p>
-        </div>
-        <a href="https://alexdibol.github.io/markets_for_traders" class="button" target="_blank" rel="noopener">
-          Visit Pillar III
+          <div class="hint"><b>OPEN LANDING PAGE</b> <span>→</span></div>
         </a>
       </div>
 
+      <div class="callout" style="margin-top:22px;">
+        <strong>Design stance:</strong> A strategy is a mechanism embedded in a constrained environment.
+        Execution and regime behavior dominate narrative elegance. This platform makes those constraints visible, measurable, and reviewable.
+      </div>
     </div>
-  </div>
 
-  <div class="panel">
-    <div class="section-title">Institutional Standard</div>
+    <div class="panel">
+      <div class="domainhead">
+        <h2>INSTITUTIONAL STANDARD</h2>
+        <span class="domaintag">AUDITABLE · REPRODUCIBLE · HUMAN-ACCOUNTABLE</span>
+      </div>
 
-    <p>
-      Algo Systems represents a new institutional standard in systematic trading education —
-      aligning engineering rigor, governed experimentation, and market structure literacy
-      with expectations found in serious quantitative research environments.
-    </p>
+      <p>
+        Algo Systems aligns engineering rigor, governed experimentation, and market structure literacy
+        with expectations found in serious quantitative research environments.
+      </p>
 
-    <p>
-      This standard is operational, not rhetorical. In the laboratories, each run produces deterministic artifacts,
-      assumptions are separated from observations, and stage gates precede interpretation.
-      The objective is not performance marketing, nor unchecked optimization; it is disciplined systematic reasoning.
-    </p>
+      <p>
+        This standard is operational, not rhetorical. In the laboratories, each run produces deterministic artifacts,
+        assumptions are separated from observations, and stage gates precede interpretation.
+        The objective is not performance marketing nor unchecked optimization; it is disciplined systematic reasoning.
+      </p>
 
-    <p class="highlight">
-      It does not promise alpha. It builds structural competence.
-    </p>
+      <p class="highlight">It does not promise alpha. It builds structural competence.</p>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="small">
-      For transparency: many notebooks label outputs as <code class="inline">Not verified</code> pending independent review.
-      This is intentional. It separates experimentation from deployment and prevents narrative certainty where verification is not yet complete.
-    </p>
-  </div>
+      <p class="small">
+        For transparency: many notebooks label outputs as <code class="inline">Not verified</code> pending independent review.
+        This is intentional. It separates experimentation from deployment and prevents narrative certainty where verification is not yet complete.
+      </p>
+    </div>
 
-  <div class="panel">
-    <div class="section-title">AI Use Disclosure </div>
+    <div class="panel">
+      <div class="domainhead">
+        <h2>AI USE DISCLOSURE</h2>
+        <span class="domaintag">AI-ASSISTED · HUMAN-LED</span>
+      </div>
 
-    <p>
-      Portions of the written content and software code associated with Algo Systems were developed with the assistance of artificial intelligence tools.
-      These tools were used as drafting, refactoring, and productivity aids under direct human supervision.
-    </p>
+      <p>
+        Portions of the written content and software code associated with Algo Systems were developed with the assistance of artificial intelligence tools.
+        These tools were used as drafting, refactoring, and productivity aids under direct human supervision.
+      </p>
 
-    <p>
-      The author provided the conceptual direction, methodological constraints, and governance requirements; selected and edited outputs;
-      verified structural consistency; and approved final content. The author remains responsible for the design decisions,
-      for the interpretation of results, and for the integrity of the governance framework.
-    </p>
+      <p>
+        The author provided the conceptual direction, methodological constraints, and governance requirements; selected and edited outputs;
+        verified structural consistency; and approved final content. The author remains responsible for the design decisions,
+        for the interpretation of results, and for the integrity of the governance framework.
+      </p>
 
-    <p class="small">
-      AI tools may produce errors, omissions, or misleading phrasing. Users should treat all materials as educational and subject to independent verification.
-      Where external validation is required (e.g., for real-world deployment, compliance, or investment decisions), qualified human review is mandatory.
-    </p>
+      <p class="small">
+        AI tools may produce errors, omissions, or misleading phrasing. Users should treat all materials as educational and subject to independent verification.
+        Where external validation is required (e.g., real-world deployment, compliance, or investment decisions), qualified human review is mandatory.
+      </p>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="small">
-      Summary: AI assisted the workflow; it does not bear authorship, does not assume responsibility, and does not replace independent verification.
-    </p>
-  </div>
+      <p class="small">
+        Summary: AI assisted the workflow; it does not bear authorship, does not assume responsibility, and does not replace independent verification.
+      </p>
+    </div>
 
-  <div class="panel">
-    <div class="section-title">Copyright & License </div>
+    <div class="panel">
+      <div class="domainhead">
+        <h2>COPYRIGHT &amp; LICENSE</h2>
+        <span class="domaintag">MIT LICENSE</span>
+      </div>
 
-    <p>
-      Unless otherwise noted, the contents of this site and repository are authored and maintained by the project owner.
-      The repository is distributed under the MIT License to support reuse and adaptation with attribution.
-      The MIT License grants broad permissions to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software and documentation,
-      provided that the copyright notice and permission notice are included in all copies or substantial portions.
-    </p>
+      <p>
+        Unless otherwise noted, the contents of this site and repository are authored and maintained by the project owner.
+        The repository is distributed under the MIT License to support reuse and adaptation with attribution.
+      </p>
 
-    <p class="small">
-      MIT License summary (non-authoritative): you may reuse and modify the materials for commercial or non-commercial purposes,
-      but you must preserve the copyright and license notice. The materials are provided “as is,” without warranties.
-    </p>
+      <p class="small">
+        The materials are provided “as is,” without warranties. This summary is not legal advice; the license text below controls.
+      </p>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p><b>MIT License (Full Text)</b></p>
+      <p><b>MIT License (Full Text)</b></p>
 
-    <p class="small" style="white-space:pre-wrap">
+      <p class="small" style="white-space:pre-wrap">
 MIT License
 
 Copyright (c) 2026 Alejandro Reynoso
@@ -349,17 +419,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-    </p>
+      </p>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <p class="small">
-      Note: This license applies to the repository materials unless a specific file or submodule states a different license.
-      Trademarks, logos, and names may be subject to separate rights.
-    </p>
+      <p class="small">
+        Note: This license applies to the repository materials unless a specific file or submodule states a different license.
+        Trademarks, logos, and names may be subject to separate rights.
+      </p>
+    </div>
+
   </div>
-
-</div>
 </section>
 
 <footer>
